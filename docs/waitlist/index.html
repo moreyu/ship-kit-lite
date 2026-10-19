@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="下班上架 Ship Kit 完整版候补登记。Lite 已免费开放；完整版（5 个技能 + 模板 + 6 个月更新）上线第一时间通知你。">
+    <meta name="theme-color" content="#f8f9fa">
+    <title>完整版候补登记 · 下班上架 Ship Kit</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 20 L80 20 L80 80 L20 80 Z' fill='%230a84ff' fill-opacity='0.1' stroke='%230a84ff' stroke-width='8'/%3E%3Ctext x='50' y='55' font-family='system-ui' font-size='68' font-weight='700' fill='%230a84ff' text-anchor='middle'%3E%F0%9F%93%B1%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --accent: #0a84ff;
+            --text: #1d1d1f;
+            --text-secondary: #555;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+        .container { max-width: 560px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+        .logo span { color: var(--accent); }
+
+        main { flex: 1; padding: 48px 0 64px; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(10,132,255,0.1);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+        .pitch {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .hint {
+            font-weight: 400;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .field { margin-bottom: 20px; }
+        input[type="email"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fff;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(10,132,255,0.15);
+        }
+        textarea { min-height: 96px; resize: vertical; }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 9999px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .submit-btn:hover {
+            background: #0a6bff;
+            transform: translateY(-1px);
+        }
+        .submit-btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+        }
+
+        .disclaimers {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.6;
+        }
+        .disclaimers ul {
+            list-style: none;
+            padding: 0;
+        }
+        .disclaimers li {
+            padding: 4px 0;
+            padding-left: 1.1em;
+            position: relative;
+        }
+        .disclaimers li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #bbb;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 28px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        footer a { color: #ccc; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.55rem; }
+            .card { padding: 24px 18px; }
+            main { padding: 32px 0 48px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><span>下班上架</span> · Ship Kit</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero-badge">完整版候补</div>
+            <h1>完整版候补登记 · 下班上架 Ship Kit</h1>
+            <p class="pitch">Lite 已免费开放；完整版（5 个技能 + 模板 + 6 个月更新）还在做。留下邮箱，上线第一时间通知你。</p>
+
+            <div class="links">
+                <a href="https://github.com/moreyu/ship-kit-lite/releases/download/v0.1/ship-kit-lite.zip">下载 Lite（免费）</a>
+                <a href="https://github.com/moreyu/ship-kit-lite">GitHub 仓库</a>
+            </div>
+
+            <div class="card">
+                <form action="https://formsubmit.co/moreyu@v.cd" method="POST">
+                    <input type="hidden" name="_subject" value="Ship Kit 完整版候补登记">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://moreyu.github.io/ship-kit-lite/waitlist/thanks.html">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="field">
+                        <label for="email">邮箱 <span class="hint">必填</span></label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+                    </div>
+
+                    <div class="field">
+                        <label for="name">称呼 / 昵称 <span class="hint">选填</span></label>
+                        <input type="text" id="name" name="name" placeholder="怎么称呼你" autocomplete="nickname">
+                    </div>
+
+                    <div class="field">
+                        <label for="note">备注 <span class="hint">选填，例如主要做 iOS / macOS，或想优先要哪个技能</span></label>
+                        <textarea id="note" name="note" placeholder="主要做 iOS / macOS / 想优先要哪个技能…"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">登记候补</button>
+                </form>
+            </div>
+
+            <div class="disclaimers">
+                <ul>
+                    <li>不保证过审；审核结果由 Apple App Review 独立决定</li>
+                    <li>非 Apple / 工信部官方产品，与任何监管机构无关联</li>
+                    <li>无联盟 / 返利链接</li>
+                    <li>仅用于完整版上线候补通知，不出售、不转卖名单</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>下班上架 · Ship Kit · <a href="https://github.com/moreyu/ship-kit-lite">GitHub</a> · MIT</p>
+        </div>
+    </footer>
+</body>
+</html>

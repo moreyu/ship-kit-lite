@@ -48,7 +48,7 @@ ship-kit-lite/
 - 一切以 Apple / 工信部官方最新文档为准；本包仅为操作手册与检查清单。
 - 本仓库及落地页**无联盟 / 返利链接**。
 
-完整版见落地页（链接稍后补）。
+完整版（5 个技能 + 模板 + 6 个月更新）还在做，可先登记候补：[候补登记页](https://moreyu.github.io/ship-kit-lite/waitlist/)（GitHub Pages，`docs/waitlist`）。
 
 ---
 
